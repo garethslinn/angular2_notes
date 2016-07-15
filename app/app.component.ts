@@ -2,6 +2,11 @@ import {Component} from 'angular2/core';
 import {VoterComponent} from './voter.component';
 import {LowerUpperPipeExample} from "./ng.LowerCasePipe.component";
 import {CurrencyPipeExample} from "./ng.currencyPipe.component";
+import {NgForExample} from "./ng.ngFor.component";
+import {CustomPipeExample} from "./ng.customPipe";
+import {NgStyleExample} from "./ng.ngStyle";
+import {BootstrapPanel} from "./bootstrap.panel.component";
+
 
 
 @Component({
@@ -20,8 +25,8 @@ import {CurrencyPipeExample} from "./ng.currencyPipe.component";
         </voter>
         
         <ul class="nav nav-pills">
-            <li><a (click)="viewMode = 'map'">Map View</a></li>
-            <li><a (click)="viewMode = 'list'">List View</a></li>
+            <li [class.active]="viewMode == 'map'"><a (click)="viewMode = 'map'">Map View</a></li>
+            <li [class.active]="viewMode == 'list'"><a (click)="viewMode = 'list'">List View</a></li>
         </ul>
         <div [ngSwitch]="viewMode">
             <template [ngSwitchWhen]="'map'">Map View Container</template>
@@ -29,9 +34,17 @@ import {CurrencyPipeExample} from "./ng.currencyPipe.component";
         </div>
         <lowerupper-example></lowerupper-example>
         <currency-example></currency-example>
+        <ngFor-example></ngFor-example>
+        <customPipe-example></customPipe-example>
+        <ngStyle-example></ngStyle-example>
+        <bs-panel>
+            <div class="heading">The heading</div>
+            <div class="body">This is a body</div>
+        </bs-panel>
         
 `,
-    directives: [VoterComponent, LowerUpperPipeExample, CurrencyPipeExample]
+    directives: [VoterComponent, LowerUpperPipeExample, CurrencyPipeExample, NgForExample, CustomPipeExample, NgStyleExample, BootstrapPanel   ]
+
 })
 
 export class AppComponent {
