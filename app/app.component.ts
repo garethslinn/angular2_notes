@@ -6,6 +6,7 @@ import {NgForExample} from "./ng.ngFor.component";
 import {CustomPipeExample} from "./ng.customPipe";
 import {NgStyleExample} from "./ng.ngStyle";
 import {BootstrapPanel} from "./bootstrap.panel.component";
+import {ZippyComponent} from "./zippy.component";
 
 
 
@@ -41,9 +42,15 @@ import {BootstrapPanel} from "./bootstrap.panel.component";
             <div class="heading">The heading</div>
             <div class="body">This is a body</div>
         </bs-panel>
+        <zippy title="Who can see my stuff?">
+            Content of who can see my stuff
+        </zippy>
+        <zippy title="Who can contact me?">
+            Content of who can contact me
+        </zippy>
         
 `,
-    directives: [VoterComponent, LowerUpperPipeExample, CurrencyPipeExample, NgForExample, CustomPipeExample, NgStyleExample, BootstrapPanel   ]
+    directives: [VoterComponent, LowerUpperPipeExample, CurrencyPipeExample, NgForExample, CustomPipeExample, NgStyleExample, BootstrapPanel, ZippyComponent   ]
 
 })
 
